@@ -11,7 +11,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+        leading: Icon(Icons.arrow_back_ios),
+        title: Text("Students Managment"),
+        centerTitle: true,
+      ),
     );
   }
 }

@@ -13,7 +13,7 @@ class Student extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.white),
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       home: Home(),
     );
   }

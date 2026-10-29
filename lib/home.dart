@@ -54,6 +54,12 @@ class _HomeState extends State<Home> {
                         'age: ${student['age']}  .  class: ${student['class']}',
                       ),
                       trailing: Icon(Icons.arrow_forward_ios),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Details()),
+                        );
+                      },
                     ),
                   );
                 },

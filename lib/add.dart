@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stuent_managment/home.dart';
+
+import 'details.dart';
 
 class AddStudents extends StatefulWidget {
   const AddStudents({super.key});
@@ -90,7 +92,12 @@ class _AddStudentsState extends State<AddStudents> {
                 height: 40,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Details()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stuent_managment/add.dart';
+import 'package:stuent_managment/details.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -42,7 +43,14 @@ class _HomeState extends State<Home> {
 
                   return Card(
                     margin: EdgeInsets.all(10),
+
                     child: ListTile(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Details()),
+                        );
+                      },
                       leading: CircleAvatar(child: Icon(Icons.person)),
                       title: Text(
                         student['name'],

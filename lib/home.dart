@@ -45,12 +45,6 @@ class _HomeState extends State<Home> {
                     margin: EdgeInsets.all(10),
 
                     child: ListTile(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Details()),
-                        );
-                      },
                       leading: CircleAvatar(child: Icon(Icons.person)),
                       title: Text(
                         student['name'],

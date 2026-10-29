@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 
 void main() {
-  runApp(Student());
+  runApp(Students());
 }
 
-class Student extends StatelessWidget {
-  const Student({super.key});
+class Students extends StatelessWidget {
+  const Students({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.white),
+      title: "Student_Managment",
       debugShowCheckedModeBanner: false,
       home: Home(),
     );

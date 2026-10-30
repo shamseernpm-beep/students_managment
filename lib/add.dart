@@ -12,6 +12,11 @@ class AddStudents extends StatefulWidget {
 }
 
 class _AddStudentsState extends State<AddStudents> {
+  final username = TextEditingController();
+  final age = TextEditingController();
+  final classs = TextEditingController();
+  final address = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +59,7 @@ class _AddStudentsState extends State<AddStudents> {
               Text("Name"),
               SizedBox(height: 7),
               TextField(
+                controller: username,
                 decoration: InputDecoration(
                   hintText: "enter your name",
                   border: OutlineInputBorder(),
@@ -63,6 +69,7 @@ class _AddStudentsState extends State<AddStudents> {
               Text("Age"),
               SizedBox(height: 7),
               TextField(
+                controller: age,
                 decoration: InputDecoration(
                   hintText: "enter your Age",
                   border: OutlineInputBorder(),
@@ -72,6 +79,7 @@ class _AddStudentsState extends State<AddStudents> {
               Text("Class"),
               SizedBox(height: 7),
               TextField(
+                controller: classs,
                 decoration: InputDecoration(
                   hintText: "enter your Class",
                   border: OutlineInputBorder(),
@@ -81,6 +89,7 @@ class _AddStudentsState extends State<AddStudents> {
               Text("Email"),
               SizedBox(height: 7),
               TextField(
+                controller: address,
                 maxLines: 3,
                 decoration: InputDecoration(
                   hintText: "Enter your Email",

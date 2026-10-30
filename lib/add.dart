@@ -82,7 +82,7 @@ class _AddStudentsState extends State<AddStudents> {
               SizedBox(height: 40),
               Text("Addrass"),
               SizedBox(height: 7),
-               
+              SizedBox(height: 7),
               TextField(
                 controller: address,
                 maxLines: 3,

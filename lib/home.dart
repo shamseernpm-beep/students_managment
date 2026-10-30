@@ -66,11 +66,16 @@ class _HomeState extends State<Home> {
               ),
             ),
             FloatingActionButton(
-              onPressed: () {
-                Navigator.push(
+              onPressed: () async {
+                final newstudent = await Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => AddStudents()),
                 );
+                if (newstudent != null) {
+                  setState(() {
+                    students.add(newstudent);
+                  });
+                }
               },
               child: Icon(Icons.add),
             ),

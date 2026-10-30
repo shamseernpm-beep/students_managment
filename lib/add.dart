@@ -23,10 +23,7 @@ class _AddStudentsState extends State<AddStudents> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(
-              context,
-              MaterialPageRoute(builder: (context) => Home()),
-            );
+            Navigator.pop(context);
           },
           icon: Icon(Icons.arrow_back_ios),
         ),
@@ -86,13 +83,13 @@ class _AddStudentsState extends State<AddStudents> {
                 ),
               ),
               SizedBox(height: 40),
-              Text("Email"),
+              Text("Addrass"),
               SizedBox(height: 7),
               TextField(
                 controller: address,
                 maxLines: 3,
                 decoration: InputDecoration(
-                  hintText: "Enter your Email",
+                  hintText: "Enter your Addras",
                   border: OutlineInputBorder(),
                 ),
               ),
@@ -101,7 +98,15 @@ class _AddStudentsState extends State<AddStudents> {
                 height: 40,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Map<String, dynamic> student = {
+                      'name': username.text,
+                      'age': int.tryParse(age.text) ?? 0,
+                      'class': int.tryParse(classs.text) ?? 0,
+                      'address': address.text,
+                    };
+                    Navigator.pop(context, student);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,

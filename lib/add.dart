@@ -1,8 +1,5 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:stuent_managment/home.dart';
-
-import 'details.dart';
 
 class AddStudents extends StatefulWidget {
   const AddStudents({super.key});

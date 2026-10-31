@@ -48,7 +48,7 @@ class Details extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.cake),
                   title: Text('Age'),
-                  subtitle: Text("20"),
+                  subtitle: Text("28"),
                 ),
               ),
               SizedBox(height: 20),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stuent_managment/home.dart';
 
+// ignore: must_be_immutable
 class Details extends StatefulWidget {
   dynamic student;
   Details({super.key, required this.student});
@@ -21,10 +22,7 @@ class _DetailsState extends State<Details> {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Home()),
-            );
+            Navigator.pop(context);
           },
           icon: Icon(Icons.arrow_back_ios),
         ),

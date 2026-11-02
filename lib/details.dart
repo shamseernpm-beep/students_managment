@@ -62,7 +62,7 @@ class _DetailsState extends State<Details> {
                 child: ListTile(
                   leading: Icon(Icons.school),
                   title: Text("class"),
-                  subtitle: Text('${widget.student['age']}'),
+                  subtitle: Text('${widget.student['class']}'),
                 ),
               ),
               SizedBox(height: 20),

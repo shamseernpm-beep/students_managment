@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stuent_managment/add.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:stuent_managment/details.dart';
+import 'package:stuent_managment/main.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,13 +11,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Map<String, dynamic>> students = [
-    {'name': 'riswan', 'age': 20, 'class': 12},
-    {'name': 'riswan', 'age': 18, 'class': 9},
-    {'name': 'riswan', 'age': 19, 'class': 5},
-    {'name': 'riswan', 'age': 19, 'class': 8},
-    {'name': 'riswan', 'age': 19, 'class': 10},
-  ];
+  late Box studentsBox;
+
+  @override
+  void initState() {
+    super.initState();
+    studentsBox = Hive.box("students");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,48 +38,40 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             Expanded(
-              child: ListView.builder(
-                itemCount: students.length,
-                itemBuilder: (context, index) {
-                  final student = students[index];
+              child: ValueListenableBuilder(
+                valueListenable: studentsBox.listenable(),
+                builder: (context, box, child) {
+                  final students = box.values.toList();
 
-                  return Card(
-                    margin: EdgeInsets.all(10),
+                  if (students.isEmpty) {
+                    return Center(child: Text("No Students Add Yet"));
+                  }
+                  return ListView.builder(
+                    itemCount: students.length,
+                    itemBuilder: (context, index) {
+                      final student = students[index];
 
-                    child: ListTile(
-                      leading: CircleAvatar(child: Icon(Icons.person)),
-                      title: Text(
-                        student['name'],
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      subtitle: Text(
-                        'age: ${student['age']}  .  class: ${student['class']}',
-                      ),
-                      trailing: Icon(Icons.arrow_forward_ios),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Details()),
-                        );
-                      },
-                    ),
+                      return Card(
+                        margin: EdgeInsets.all(10),
+
+                        child: ListTile(
+                          leading: Icon(Icons.person),
+                          title: Text(student["name"].toString()),
+                          trailing: Icon(Icons.arrow_forward_ios),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Details(),
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    },
                   );
                 },
               ),
-            ),
-            FloatingActionButton(
-              onPressed: () async {
-                final newstudent = await Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AddStudents()),
-                );
-                if (newstudent != null) {
-                  setState(() {
-                    students.add(newstudent);
-                  });
-                }
-              },
-              child: Icon(Icons.add),
             ),
           ],
         ),

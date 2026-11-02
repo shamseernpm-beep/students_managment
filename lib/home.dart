@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:stuent_managment/add.dart';
 import 'package:stuent_managment/details.dart';
 import 'package:stuent_managment/main.dart';
 
@@ -72,6 +73,15 @@ class _HomeState extends State<Home> {
                   );
                 },
               ),
+            ),
+            FloatingActionButton(
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AddStudents()),
+                );
+              },
+              child: Text("Add"),
             ),
           ],
         ),

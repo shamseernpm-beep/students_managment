@@ -63,7 +63,7 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Details(),
+                                builder: (context) => Details(student: student),
                               ),
                             );
                           },

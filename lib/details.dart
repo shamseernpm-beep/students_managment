@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:stuent_managment/home.dart';
 
-class Details extends StatelessWidget {
-  const Details({super.key});
+class Details extends StatefulWidget {
+  dynamic student;
+  Details({super.key, required this.student});
 
+  @override
+  State<Details> createState() => _DetailsState();
+}
+
+class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +41,7 @@ class Details extends StatelessWidget {
                     CircleAvatar(maxRadius: 40, child: Icon(Icons.person)),
                     SizedBox(height: 10),
                     Text(
-                      "Riswan",
+                      "${widget.student["name"]}",
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                   ],
@@ -48,7 +54,7 @@ class Details extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.cake),
                   title: Text('Age'),
-                  subtitle: Text("28"),
+                  subtitle: Text('${widget.student['age']}'),
                 ),
               ),
               SizedBox(height: 20),
@@ -56,7 +62,7 @@ class Details extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.school),
                   title: Text("class"),
-                  subtitle: Text("12"),
+                  subtitle: Text('${widget.student['age']}'),
                 ),
               ),
               SizedBox(height: 20),
@@ -64,7 +70,7 @@ class Details extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(Icons.location_on),
                   title: Text("Address"),
-                  subtitle: Text("Malappuram,kerala"),
+                  subtitle: Text('${widget.student['address']}'),
                 ),
               ),
             ],

@@ -45,7 +45,7 @@ class _DetailsState extends State<Details> {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 19),
               Divider(height: 2, color: Colors.black),
               SizedBox(height: 20),
               Card(

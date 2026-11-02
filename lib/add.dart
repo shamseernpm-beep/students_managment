@@ -1,5 +1,8 @@
 // import 'package:flutter/cupertino.dart';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class AddStudents extends StatefulWidget {
   const AddStudents({super.key});
@@ -13,6 +16,15 @@ class _AddStudentsState extends State<AddStudents> {
   final age = TextEditingController();
   final classs = TextEditingController();
   final address = TextEditingController();
+
+  @override
+  void dispose() {
+    username.dispose();
+    age.dispose();
+    classs.dispose();
+    address.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,14 +108,19 @@ class _AddStudentsState extends State<AddStudents> {
                 height: 40,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     Map<String, dynamic> student = {
                       'name': username.text,
                       'age': int.tryParse(age.text) ?? 0,
                       'class': int.tryParse(classs.text) ?? 0,
                       'address': address.text,
                     };
-                    Navigator.pop(context, student);
+                    final box = Hive.box("students");
+
+                    await box.add(student);
+                    if (mounted) {
+                      Navigator.pop(context);
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,

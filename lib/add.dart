@@ -118,6 +118,7 @@ class _AddStudentsState extends State<AddStudents> {
 
                     await box.add(student);
                     if (mounted) {
+                      // ignore: use_build_context_synchronously
                       Navigator.pop(context);
                     }
                   },

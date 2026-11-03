@@ -75,8 +75,8 @@ class _HomeState extends State<Home> {
               ),
             ),
             FloatingActionButton(
-              onPressed: () async {
-                await Navigator.push(
+              onPressed: () {
+                Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => AddStudents()),
                 );

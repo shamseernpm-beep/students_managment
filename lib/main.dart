@@ -22,7 +22,7 @@ class Students extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Student_Managment",
+      title: "Student_Managmen",
       debugShowCheckedModeBanner: false,
       home: Home(),
     );

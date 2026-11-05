@@ -111,7 +111,7 @@ class _AddStudentsState extends State<AddStudents> {
                     Map<String, dynamic> student = {
                       'name': username.text,
                       'age': int.tryParse(age.text) ?? 0,
-                      'class': int.tryParse(classs.text) ?? 0,
+                      'class': classs.text,
                       'address': address.text,
                     };
                     final box = Hive.box("students");

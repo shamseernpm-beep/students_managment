@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hive_flutter/adapters.dart';
 
+import 'models/student_model.dart';
+
 import 'home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
-  await Hive.openBox("students");
+  Hive.registerAdapter(StudentAdapter());
+  await Hive.openBox<Student>("students");
+
   runApp(Students());
 }
 
@@ -18,7 +22,7 @@ class Students extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Student_Managment",
+      title: "Student_Managmen",
       debugShowCheckedModeBanner: false,
       home: Home(),
     );

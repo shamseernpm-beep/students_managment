@@ -1,7 +1,8 @@
 // import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:stuent_managment/models/student_model.dart';
+import 'package:stuent_managment/services/student_service.dart';
 
 class AddStudents extends StatefulWidget {
   const AddStudents({super.key});
@@ -11,6 +12,8 @@ class AddStudents extends StatefulWidget {
 }
 
 class _AddStudentsState extends State<AddStudents> {
+  final StudentService studentService = StudentService();
+
   final username = TextEditingController();
   final age = TextEditingController();
   final classs = TextEditingController();
@@ -108,17 +111,16 @@ class _AddStudentsState extends State<AddStudents> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () async {
-                    Map<String, dynamic> student = {
-                      'name': username.text,
-                      'age': int.tryParse(age.text) ?? 0,
-                      'class': classs.text,
-                      'address': address.text,
-                    };
-                    final box = Hive.box("students");
+                    final student = Student(
+                      name: username.text,
+                      age: int.tryParse(age.text) ?? 0,
+                      studentClass: classs.text,
+                      address: address.text,
+                    );
 
-                    await box.add(student);
+                    await studentService.addStudent(student);
+
                     if (mounted) {
-                      // ignore: use_build_context_synchronously
                       Navigator.pop(context);
                     }
                   },

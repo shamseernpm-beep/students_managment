@@ -3,6 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:stuent_managment/add.dart';
 import 'package:stuent_managment/details.dart';
 import 'package:stuent_managment/main.dart';
+import 'package:stuent_managment/models/student_model.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,12 +13,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late Box studentsBox;
+  late Box<Student> studentsBox;
 
   @override
   void initState() {
     super.initState();
-    studentsBox = Hive.box("students");
+    studentsBox = Hive.box<Student>("students");
   }
 
   @override
@@ -57,7 +58,7 @@ class _HomeState extends State<Home> {
 
                         child: ListTile(
                           leading: Icon(Icons.person),
-                          title: Text(student["name"].toString()),
+                          title: Text(student.name),
                           trailing: Icon(Icons.arrow_forward_ios),
                           onTap: () {
                             Navigator.push(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stuent_managment/home.dart';
+import 'package:stuent_managment/models/student_model.dart';
 
 // ignore: must_be_immutable
 class Details extends StatefulWidget {
-  dynamic student;
+  final Student student;
   Details({super.key, required this.student});
 
   @override
@@ -39,7 +39,7 @@ class _DetailsState extends State<Details> {
                     CircleAvatar(maxRadius: 40, child: Icon(Icons.person)),
                     SizedBox(height: 10),
                     Text(
-                      "${widget.student["name"]}",
+                      widget.student.name,
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                   ],
@@ -52,7 +52,7 @@ class _DetailsState extends State<Details> {
                 child: ListTile(
                   leading: Icon(Icons.cake),
                   title: Text('Age'),
-                  subtitle: Text('${widget.student['age']}'),
+                  subtitle: Text('${widget.student.age}'),
                 ),
               ),
               SizedBox(height: 20),
@@ -60,7 +60,7 @@ class _DetailsState extends State<Details> {
                 child: ListTile(
                   leading: Icon(Icons.school),
                   title: Text("class"),
-                  subtitle: Text('${widget.student['class']}'),
+                  subtitle: Text(widget.student.studentClass),
                 ),
               ),
               SizedBox(height: 20),
@@ -68,7 +68,7 @@ class _DetailsState extends State<Details> {
                 child: ListTile(
                   leading: Icon(Icons.location_on),
                   title: Text("Address"),
-                  subtitle: Text('${widget.student['address']}'),
+                  subtitle: Text(widget.student.address),
                 ),
               ),
             ],

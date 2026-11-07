@@ -14,7 +14,7 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( 
         title: Text(
           "Student Details",
           style: TextStyle(fontSize: 25, color: Colors.black),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:stuent_managment/add.dart';
 import 'package:stuent_managment/details.dart';
-import 'package:stuent_managment/main.dart';
 import 'package:stuent_managment/models/student_model.dart';
 
 class Home extends StatefulWidget {

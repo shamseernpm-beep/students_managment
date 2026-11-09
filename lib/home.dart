@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
                   MaterialPageRoute(builder: (context) => AddStudents()),
                 );
               },
-              child: Text("Add"),
+              child: Text(""),
             ),
           ],
         ),

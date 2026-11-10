@@ -59,7 +59,7 @@ class _DetailsState extends State<Details> {
               Card(
                 child: ListTile(
                   leading: Icon(Icons.school),
-                  title: Text(""),
+                  title: Text("class"),
                   subtitle: Text(widget.student.studentClass),
                 ),
               ),

@@ -4,7 +4,7 @@ import 'package:stuent_managment/models/student_model.dart';
 // ignore: must_be_immutable
 class Details extends StatefulWidget {
   final Student student;
-  Details({super.key, required this.student});
+  const Details({super.key, required this.student});
 
   @override
   State<Details> createState() => _DetailsState();

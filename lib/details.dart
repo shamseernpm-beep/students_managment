@@ -14,7 +14,7 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
+      appBar: AppBar(
         title: Text(
           "Student Details",
           style: TextStyle(fontSize: 25, color: Colors.black),
@@ -59,7 +59,7 @@ class _DetailsState extends State<Details> {
               Card(
                 child: ListTile(
                   leading: Icon(Icons.school),
-                  title: Text("class"),
+                  title: Text(""),
                   subtitle: Text(widget.student.studentClass),
                 ),
               ),

@@ -89,7 +89,7 @@ class _AddStudentsState extends State<AddStudents> {
               TextField(
                 controller: classs,
                 decoration: InputDecoration(
-                  hintText: "enter your Class",
+                  hintText: "enter  Class",
                   border: OutlineInputBorder(),
                 ),
               ),

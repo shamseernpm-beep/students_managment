@@ -101,7 +101,7 @@ class _AddStudentsState extends State<AddStudents> {
                 controller: address,
                 maxLines: 3,
                 decoration: InputDecoration(
-                  hintText: "Enter your Addras",
+                  hintText: "Enter your Addrass",
                   border: OutlineInputBorder(),
                 ),
               ),

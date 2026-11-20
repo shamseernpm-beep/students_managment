@@ -111,7 +111,13 @@ class _AddStudentsState extends State<AddStudents> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () async {
-                    final student = Student(
+                    if (username.text.isEmpty ||
+                        age.text.isEmpty ||
+                        classs.text.isEmpty ||
+                        address.text.isEmpty) {
+                      return;
+                    }
+                    Student student = Student(
                       name: username.text,
                       age: int.tryParse(age.text) ?? 0,
                       studentClass: classs.text,

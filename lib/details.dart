@@ -51,7 +51,7 @@ class _DetailsState extends State<Details> {
               Card(
                 child: ListTile(
                   leading: Icon(Icons.cake),
-                  title: Text('Age '),
+                  title: Text(' '),
                   subtitle: Text('${widget.student.age}'),
                 ),
               ),

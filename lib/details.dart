@@ -67,7 +67,7 @@ class _DetailsState extends State<Details> {
               Card(
                 child: ListTile(
                   leading: Icon(Icons.location_on),
-                  title: Text("Address"),
+                  title: Text(""),
                   subtitle: Text(widget.student.address),
                 ),
               ),

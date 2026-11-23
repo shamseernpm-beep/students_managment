@@ -134,7 +134,7 @@ class _AddStudentsState extends State<AddStudents> {
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,
                   ),
-                  child: Text("Add "),
+                  child: Text("Add Student"),
                 ),
               ),
             ],
